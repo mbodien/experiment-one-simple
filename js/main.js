@@ -30,7 +30,7 @@ var database = new Firebase('https://experiment-one-c3120.firebaseio.com/');
 
 
 function writeData(userID, age, gender) {
-    database().set({
+    database.set({
         'userID': userID,
         'age': age,
         'gender': gender
