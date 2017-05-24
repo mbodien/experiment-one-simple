@@ -1,11 +1,11 @@
 var currentPage = 1;
 
-// $(document).ready(function () {
-//     if(currentPage === 1) {
-//         $('.page').hide();
-//         $('#page1').show();
-//     }
-// });
+$(document).ready(function () {
+    if(currentPage === 1) {
+        $('.page').hide();
+        $('#page1').show();
+    }
+});
 
 $('.page').hide();
 $('#page1').show();
