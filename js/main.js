@@ -13,7 +13,7 @@ function nextPage() {
     var pageShow = '#page' + currentPage;
     $(pageHide).hide();
     $(pageShow).show();
-    writeData('thisisUserID','44','Male');
+    writeData('thisisUserID','44','female');
 }
 
 var select = '';
@@ -30,7 +30,7 @@ var database = new Firebase('https://experiment-one-c3120.firebaseio.com/');
 
 
 function writeData(userID, age, gender) {
-    database().push({
+    database().set({
         'userID': userID,
         'age': age,
         'gender': gender
