@@ -1,11 +1,11 @@
-// database initialization
-var database = new Firebase('https://experiment-one-c3120.firebaseio.com/'):
-
-var participantsRef = firebase.database().ref('users/');
-
-participantsRef.on("value",function(snapshot) {
-    console.log(snapshot.val());
-});
+// // database initialization
+// var database = new Firebase('https://experiment-one-c3120.firebaseio.com/'):
+//
+// var participantsRef = firebase.database().ref('users/');
+//
+// participantsRef.on("value",function(snapshot) {
+//     console.log(snapshot.val());
+// });
 
 
 
