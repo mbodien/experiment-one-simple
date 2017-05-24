@@ -7,8 +7,7 @@ var currentPage = 1;
 //     }
 // });
 
-//
-// $('.page').hide();
+$('.page').hide();
 $('#page1').show();
 
 function nextPage() {
