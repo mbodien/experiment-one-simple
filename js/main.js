@@ -1,11 +1,3 @@
-// // database initialization
-// var database = new Firebase('https://experiment-one-c3120.firebaseio.com/'):
-//
-// var participantsRef = firebase.database().ref('users/');
-//
-// participantsRef.on("value",function(snapshot) {
-//     console.log(snapshot.val());
-// });
 
 
 
@@ -13,14 +5,6 @@ $('.page').hide();
 $('#page1').show();
 
 var currentPage = 1;
-//
-// $(document).ready(function () {
-//     $('.page').hide();
-//     $('#page1').show();
-//     }
-// });
-
-
 
 
 function nextPage() {
@@ -40,12 +24,16 @@ $('#18_100').html(select);
 
 
 
+// database initialization
+var database = new Firebase('https://experiment-one-c3120.firebaseio.com/');
 
 
 
-// function writeData(userID, age, gender) {
-//     firebase.database().ref('users/' + userID).set({
-//         age: age,
-//         gender: gender
-//     })
-// }
+function writeData(userID, age, gender) {
+    database().push({
+        'userID': userID,
+        'age': age,
+        'gender': gender
+    })
+}
+
