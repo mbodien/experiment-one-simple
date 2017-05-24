@@ -36,7 +36,6 @@ participantsRef.on("value",function(snapshot) {
 });
 
 
-
 function writeData(userID, age, gender) {
     firebase.database().ref('users/' + userID).set({
         age: age,
