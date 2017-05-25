@@ -193,6 +193,93 @@
             </div>
         </div>
 
+        <!-- page 4: meme directions -->
+
+        <div class="page" id="page4">
+            <div class="container">
+                <h1>Directions</h1>
+                <p>
+                    You will now be presented with 5 different memes, one at a time. Imagine you see each meme while surfing the web. Your task is to examine the meme and then answer questions. Remember, we want to know about your reaction to the meme.
+                </p>
+                <input type="button" class="btn btn-primary" onclick="nextPage()" value="Next page">
+            </div>
+        </div>
+
+        <!-- page 5: trial 1 meme  -->
+
+        <div class="page" id="page5">
+            <div class="container meme">
+                <div class="row">
+                    <div class="col-sm-8" >
+                        <p class="memeCopy">
+                            This is meme copy ipsum lorem This is meme copy ipsum loremThis is meme copy ipsum loremThis is meme copy ipsum loremThis is meme copy ipsum lorem
+                        </p>
+                    </div>
+                    <div class="col-sm-4 memeImage" >
+                        <div class="memeImage">
+                            <img id="memePicture" src="http://bloximages.chicago2.vip.townnews.com/stljewishlight.com/content/tncms/assets/v3/editorial/b/03/b037b0de-4830-11e1-a8ed-001871e3ce6c/4f216e3f0426f.image.jpg?resize=558%2C759">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <form class="form-group">
+                    <label class="statement">How strong is your reaction to these meme?</label>
+                    <ul class="likert">
+                        <li>
+                            <input type="radio" name="likert" value="1">
+                            <label>1 Not strong at all</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="likert" value="2">
+                            <label>2</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="likert" value="3">
+                            <label>3</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="likert" value="4">
+                            <label>4</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="likert" value="1">
+                            <label>5 Very strongly</label>
+                        </li>
+
+                        <label class="statement">How positive or negative is your reaction to this meme?</label>
+                        <ul class="likert">
+                            <li>
+                                <input type="radio" name="likert" value="1">
+                                <label>1 Not strong at all</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="likert" value="2">
+                                <label>2</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="likert" value="3">
+                                <label>3</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="likert" value="4">
+                                <label>4</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="likert" value="1">
+                                <label>5 Very strongly</label>
+                            </li>
+                            <div class="buttons">
+                                <button class="submit">Submit</button>
+                            </div>
+                        </ul>
+                    </ul>
+                </form>
+                </form>
+            </div>
+
+        </div>
 
         <!-- Firebase database connection code -->
         <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
@@ -208,8 +295,6 @@
             };
             firebase.initializeApp(config);
         </script>
-
-
 
 
 

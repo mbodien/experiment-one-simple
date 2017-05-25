@@ -102,6 +102,31 @@ textarea {
     border: solid 1px black;
 }
 
+/* Meme design */
+.memeImage {
+    height:350px;
+    margin-top:10px;
+    margin-left:-15px;
+}
+
+.memeImage img {
+    height:100%;
+    width:auto;
+    overflow:hidden;
+}
+
+.memeCopy {
+    height:350px;
+    margin-left: 100px;
+    margin-top:20px;
+    padding:35px;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+
 
 
 /* Likert scale styling */

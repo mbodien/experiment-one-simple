@@ -1,38 +1,35 @@
 
 
 
-$('.page').hide();
-$('#page1').show();
+$(".page").hide();
+$("#page5").show();
 
 var currentPage = 1;
 
 
 function nextPage() {
-    var pageHide = '#page' + currentPage;
+    var pageHide = "#page" + currentPage;
     currentPage ++;
-    var pageShow = '#page' + currentPage;
+    var pageShow = "#page" + currentPage;
     $(pageHide).hide();
     $(pageShow).show();
-    writeData('thisisUserID','44','female');
 }
 
-var select = '';
+var select = "";
 for (i=18;i<=100;i++) {
-    select += '<option val=' + i + '>' + i + '</option>';
+    select += "<option val=" + i + ">" + i + "</option>";
 }
 
-$('#18_100').html(select);
+$("#18_100").html(select);
 
 
 
-// database initialization
-var database = new Firebase('https://experiment-one-c3120.firebaseio.com/');
-
+// database write
 
 function writeData(userID, age, gender) {
-    database.set({
-        'userID': userID,
-        'age': age,
-        'gender': gender
+    firebase.database().ref('/').push({
+        "userID": userID,
+        "age": age,
+        "gender": gender
     })
 }
