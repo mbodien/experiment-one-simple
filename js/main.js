@@ -29,7 +29,7 @@ function demoDataSave() {
     var age = $("input[name=age]:checked").val();
     var gender = $("input[name=gender]:checked").val();
     var facebookUsage = $("input[name=facebookAccount]:checked").val();
-    data.push(age, gender, state, facebookUsage);
+    data.push(age, gender, facebookUsage);
 }
 
 function politicalDataSave() {
