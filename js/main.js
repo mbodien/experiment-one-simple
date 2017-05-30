@@ -3,9 +3,9 @@ $(document).ready(function() {
 });
 
 $(".page").hide();
-$("#page3").show();
+$("#page1").show();
 
-var currentPage = 3;
+var currentPage = 1;
 
 /* hidden elements */
 
