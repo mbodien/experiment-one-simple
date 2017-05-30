@@ -28,7 +28,7 @@ function nextPage() {
 function demoDataSave() {
     var age = $("input[name=age]:checked").val();
     var gender = $("input[name=gender]:checked").val();
-    var facebookUsage = $("input[name=facebookAccount]:checked").val();
+    var facebookUsage = $("input[name=facebookUsage]:checked").val();
     data.push(age, gender, facebookUsage);
 }
 
@@ -166,9 +166,9 @@ function determineFillerMemeProps(memeID) {
 
 function setExperimentDirections() {
     if (revealOrderCondition === "messageFirstCondition") {
-        $("#trial1Directions").text("There are 4 different memes that you will see.\n\nBut, before we show you the whole memes, we want to know how you feel about just person who authored each message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
-    } else if (revealOrderCondition === "sourceFirstCondition") {
         $("#trial1Directions").text("There are 4 different memes that you will see.\n\nBut, Before we show you the whole memes, we want to know how you feel about just the message of each meme.\n\nPlease record how much you resonate with the person.\n\nBy resonate we mean how much does the message speak to you.");
+    } else if (revealOrderCondition === "sourceFirstCondition") {
+        $("#trial1Directions").text("There are 4 different memes that you will see.\n\nBut, before we show you the whole memes, we want to know how you feel about just person who authored each message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
     }
 }
 
@@ -390,14 +390,14 @@ var targetMemeSourceLibrary = {
 };
 
 var targetMemeImageSourceLibrary = {
-    "BO": "http://bloximages.chicago2.vip.townnews.com/stljewishlight.com/content/tncms/assets/v3/editorial/b/03/b037b0de-4830-11e1-a8ed-001871e3ce6c/4f216e3f0426f.image.jpg?resize=558%2C759",
-    "HC": "http://acelebrationofwomen.org/wp-content/uploads/2013/01/HRC.jpeg",
-    "SP": "http://thebetterrepublican.com/wp-content/uploads/2016/01/sarah-palin-a-320.jpg",
-    "DT": "http://d28hgpri8am2if.cloudfront.net/author_images/5460/donald-j-trump-24050762.jpg"
+    "BO": "http://i.imgur.com/kQkkSLw.png",
+    "HC": "http://i.imgur.com/GWBHtV1.png",
+    "SP": "http://i.imgur.com/4EjjVi2.png",
+    "DT": "http://i.imgur.com/l15IESM.png"
 };
 
 var fillerMemeCopyLibrary = {
-    "0": "If you accept the expectations of others, especially negative ones, then you never will change the outcome",
+    "0": "If you accept the expectations of others, especially negative ones, then you never will change the outcome.",
     "1": "As we look ahead into the next century, leaders will be those who empower others.",
     "2": "The only thing that interferes with my learning is my education."
 };
@@ -409,7 +409,7 @@ var fillerMemeSourcesLibrary = {
 };
 
 var fillerMemeImageSourceLibrary = {
-    "0": "http://thumbs.ebaystatic.com/images/g/AggAAOSwd4tTxuTC/s-l225.jpg",
-    "1": "http://insidebigdata.com/wp-content/uploads/2013/07/bill-gates-headshot-500px.jpg",
-    "2": "https://s-media-cache-ak0.pinimg.com/736x/05/e1/30/05e1303ea36a8c89e217a1471ff0fb0a.jpg"
+    "0": "http://i.imgur.com/znhYJK1.png",
+    "1": "http://i.imgur.com/Tn6Ohoa.png",
+    "2": "http://i.imgur.com/Zx87yWQ.png"
 };

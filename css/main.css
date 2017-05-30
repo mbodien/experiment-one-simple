@@ -118,6 +118,10 @@ form p {
     font-weight: bold;
 }
 
+.container.demos {
+    width:50%;
+}
+
 #studyConditions {
     margin-top: 30px;
     width: 60%;
