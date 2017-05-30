@@ -131,7 +131,7 @@
                     <div class="radio">
                         <label><input type="radio" name="facebookUsage" value="Less than a few times a month">Less than a few times a month</label>
                     </div>
-                    <input type="button" class="btn btn-primary" onclick="nextPage()" value="Next page">
+                    <button type="button" class="btn btn-primary" onclick="nextPage()" value="Next page">Next page</button>
                 </form>
             </div>
         </div>
@@ -145,7 +145,7 @@
                     <ul class="likert">
                         <li>
                             <input type="radio" name="likertParty" value="1">
-                            <label>Very much a Democrat</label>
+                            <label>1. Very much a Democrat</label>
                         </li>
                         <li>
                             <input type="radio" name="likertParty" value="2">
@@ -153,7 +153,7 @@
                         </li>
                         <li>
                             <input type="radio" name="likertParty" value="3">
-                            <label>Neutral</label>
+                            <label>3. Neutral</label>
                         </li>
                         <li>
                             <input type="radio" name="likertParty" value="4">
@@ -161,7 +161,7 @@
                         </li>
                         <li>
                             <input type="radio" name="likertParty" value="5">
-                            <label>5 Very much a Republican</label>
+                            <label>5. Very much a Republican</label>
                         </li>
                     </ul>
 
@@ -169,7 +169,7 @@
                     <ul class="likert">
                         <li>
                             <input type="radio" name="likert" value="1">
-                            <label>1 Very liberal</label>
+                            <label>1. Very liberal</label>
                         </li>
                         <li>
                             <input type="radio" name="likert" value="2">
@@ -177,7 +177,7 @@
                         </li>
                         <li>
                             <input type="radio" name="likert" value="3">
-                            <label>3 Moderate</label>
+                            <label>3. Moderate</label>
                         </li>
                         <li>
                             <input type="radio" name="likert" value="4">
@@ -185,10 +185,10 @@
                         </li>
                         <li>
                             <input type="radio" name="likert" value="1">
-                            <label>5 Very conservative</label>
+                            <label>5. Very conservative</label>
                         </li>
                     </ul>
-                    <input type="button" class="btn btn-primary" value="Next page" onclick="nextPage()">
+                    <input type="button" class="btn btn-primary" value="Next page" onclick="nextPage(); decideConditions(); setExperimentDirections();">
                 </form>
             </div>
         </div>
@@ -197,22 +197,22 @@
 
         <div class="page" id="page4">
             <div class="container">
-                <h1>Directions</h1>
-                <p>
-                    You will now be presented with 5 different memes, one at a time. Imagine you see each meme while surfing the web. Your task is to examine the meme and then answer questions. Remember, we want to know about your reaction to the meme.
+                <h4>Directions</h4>
+                <p id="trial1Directions" class="directions">
+                    You will now be presented with 4 memes, one at a time. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you.
                 </p>
-                <input type="button" class="btn btn-primary" onclick="nextPage()" value="Next page">
+                <input type="button" class="btn btn-primary" onclick="nextPage(); beginExperiment();" value="Next page">
             </div>
         </div>
 
-        <!-- page 5: trial 1 meme  -->
+        <!-- page 5: trial 1 and 2 memes  -->
 
         <div class="page" id="page5">
             <div class="container meme">
                 <div class="row">
                     <div class="col-sm-8" >
-                        <p class="memeCopy">
-                            This is meme copy ipsum lorem This is meme copy ipsum loremThis is meme copy ipsum loremThis is meme copy ipsum loremThis is meme copy ipsum lorem
+                        <p id="memeCopy" class="memeCopy">
+                            "Quote will go here.  witht he source added"
                         </p>
                     </div>
                     <div class="col-sm-4 memeImage" >
@@ -225,61 +225,100 @@
             </div>
             <div class="container">
                 <form class="form-group">
-                    <label class="statement">How strong is your reaction to these meme?</label>
+                    <label class="statement" id="memeStatement">How much do you resonate with this meme?</label>
                     <ul class="likert">
                         <li>
-                            <input type="radio" name="likert" value="1">
-                            <label>1 Not strong at all</label>
+                            <label> <input type="radio" name="likertMeme" value="Not at all">
+                            1 Not at all</label>
                         </li>
                         <li>
-                            <input type="radio" name="likert" value="2">
-                            <label>2</label>
+                            <label><input type="radio" name="likertMeme" value="Slightly">
+                            Slightly</label>
                         </li>
                         <li>
-                            <input type="radio" name="likert" value="3">
-                            <label>3</label>
+                            <label><input type="radio" name="likertMeme" value="Moderately">
+                            Moderately</label>
                         </li>
                         <li>
-                            <input type="radio" name="likert" value="4">
-                            <label>4</label>
+                            <label><input type="radio" name="likertMeme" value="Very">
+                            Very</label>
                         </li>
                         <li>
-                            <input type="radio" name="likert" value="1">
-                            <label>5 Very strongly</label>
+                            <label><input type="radio" name="likertMeme" value="Extremely">
+                            Extremely</label>
                         </li>
-
-                        <label class="statement">How positive or negative is your reaction to this meme?</label>
-                        <ul class="likert">
-                            <li>
-                                <input type="radio" name="likert" value="1">
-                                <label>1 Not strong at all</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="likert" value="2">
-                                <label>2</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="likert" value="3">
-                                <label>3</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="likert" value="4">
-                                <label>4</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="likert" value="1">
-                                <label>5 Very strongly</label>
-                            </li>
-                            <div class="buttons">
-                                <button class="submit">Submit</button>
-                            </div>
-                        </ul>
                     </ul>
-                </form>
+
+                    <div class="buttons">
+                        <button type="button" class="btn btn-primary" onclick="checkLikertError()">Next</button>
+                    </div>
+
+                    <div class="errorMessage" id="memeLikertError">
+                        Please make a selection
+                    </div>
+
                 </form>
             </div>
-
         </div>
+
+        <!-- page 6: directions for reveal conditions -->
+
+        <div class="page" id="page6">
+            <div class="container">
+                <h4>Directions</h4>
+                <p id="Trial2Directions">
+                    You will now be presented with the entire memes, including the message and the image. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you?
+                </p>
+                <input type="button" class="btn btn-primary" onclick="beginTrial2()" value="Next page">
+            </div>
+        </div>
+
+        <!-- page 7: facebook like questions -->
+
+        <div class="page" id="page7">
+            <div class="container">
+                <h4>Which of the memes that you have seen would you be most likely to "like" on Facebook? Please select only 1.</h4>
+            </div>
+
+            <form class="form-group">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p class="memeCopyFB" id="memeCopyFB-0">
+                                This will get replaced with the appropriate meme copy
+                            </p>
+                        </div>
+                        <div class="col-sm-4" >
+                            <div class="memeImageFB">
+                                <img id="memePictureFB-0" src="http://bloximages.chicago2.vip.townnews.com/stljewishlight.com/content/tncms/assets/v3/editorial/b/03/b037b0de-4830-11e1-a8ed-001871e3ce6c/4f216e3f0426f.image.jpg?resize=558%2C759">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container facebookRadioBlock">
+                    <label>
+                        <input type="radio" name="likertMemeFB" value="memeID-0">
+                        <img class="facebookLikePicture" src="https://cms.jotform.com/uploads/help/document/joey/88_facebook_like_button_big.jpeg">
+                        <img class="facebookSharePicture" src="https://i.stack.imgur.com/W5ZN8.png">
+                    </label>
+                </div>
+
+
+                <input type="button" class="btn btn-primary" onclick="nextPage()" value="Next page">
+            </form>
+        </div>
+
+        <!-- page 8: thank and complete -->
+
+        <div class="page" id="page8">
+            <div class="container">
+                <h4>Thank you for completing this experiment. Below is the reference code to use to submit your HIT on Amazon Mechanical Turk.</h4>
+            </div>
+        </div>
+
+
 
         <!-- Firebase database connection code -->
         <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>

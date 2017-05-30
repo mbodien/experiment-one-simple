@@ -102,6 +102,10 @@ textarea {
     border: solid 1px black;
 }
 
+.directions {
+    white-space: pre-line;
+}
+
 /* Meme design */
 .memeImage {
     height:350px;
@@ -112,7 +116,6 @@ textarea {
 .memeImage img {
     height:100%;
     width:auto;
-    overflow:hidden;
 }
 
 .memeCopy {
@@ -123,11 +126,48 @@ textarea {
     background-color:black;
     color:white;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 25px;
+    white-space: pre-line;
 }
 
+.memeCopyFB {
+    height:200px;
+    margin-left: 170px;
+    margin-top:10px;
+    padding:15px 40px 15px 15px;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    white-space:pre-line;
+}
 
+.memeImageFB {
+    height:200px;
+    margin-top:10px;
+    margin-left:-55px;
+}
 
+.memeImageFB img {
+    height: 100%;
+    width: auto;
+    overflow:hidden;
+}
+
+.facebookRadioBlock {
+    text-align:center;
+    margin:auto;
+}
+
+.facebookLikePicture {
+    max-height: 40px;
+    width: auto;
+}
+
+#memeLikertError {
+    float:right;
+    color:red;
+}
 
 /* Likert scale styling */
 
@@ -143,7 +183,7 @@ form .statement {
     font-size: 14px;
     font-weight: bold;
     padding: 30px 0 0 4.25%;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 form .likert {
     list-style:none;
@@ -178,7 +218,12 @@ form .likert li input[type=radio] {
     margin-left:-6px;
 
 }
-form .likert li label {width:100%;}
+form .likert li label {
+    width:100%;
+    font-style: normal;
+    font-size: small;
+}
+
 form .buttons {
     margin:30px 0;
     padding:0 4.25%;
