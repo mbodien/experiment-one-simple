@@ -95,15 +95,42 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.container-fluid {
-    border: solid 1px black;
-}
-.container {
-    border: solid 1px black;
+body {
+    display: none;
 }
 
 .directions {
     white-space: pre-line;
+    font-weight: normal;
+}
+
+.container.generalDirections {
+    text-align: center;
+    width: 50%;
+}
+
+#facebookDirections {
+    text-align: center;
+    font-weight: bold;
+}
+
+form p {
+    font-weight: bold;
+}
+
+#studyConditions {
+    margin-top: 30px;
+    width: 60%;
+    font-size: small;
+    font-style: italic;
+    border:solid 1px black;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.errorMessage {
+    color:red;
+    text-align: center;
 }
 
 /* Meme design */
@@ -165,7 +192,7 @@ textarea {
 }
 
 #memeLikertError {
-    float:right;
+    text-align: center;
     color:red;
 }
 
@@ -210,30 +237,125 @@ form .likert li {
     text-align:center;
     vertical-align: top;
 }
+
 form .likert li input[type=radio] {
     display:block;
     position:relative;
     top:0;
     left:50%;
     margin-left:-6px;
-
 }
+
 form .likert li label {
     width:100%;
     font-style: normal;
     font-size: small;
 }
 
+/* four point likert */
+
+form .four-pt-Likert {
+    list-style:none;
+    width:100%;
+    margin:0;
+    padding:0 0 35px;
+    display:block;
+    border-bottom:2px solid #efefef;
+}
+form .four-pt-Likert:last-of-type {border-bottom:0;}
+
+form .four-pt-Likert li {
+    display:inline-block;
+    width:19%;
+    text-align:center;
+    vertical-align: top;
+}
+
+form .four-pt-Likert:before {
+    content: '';
+    position: relative;
+    top: 11px;
+    left: 9.5%;
+    display: block;
+    background-color: #efefef;
+    height: 4px;
+    width: 58%;
+}
+
+form .four-pt-Likert li input[type=radio] {
+    display:block;
+    position:relative;
+    top:0;
+    left:50%;
+    margin-left:-6px;
+}
+
+form .four-pt-Likert li label {
+    width:100%;
+    font-style: normal;
+    font-size: small;
+}
+
+/* 7-point likert */
+
+form .seven-pt-Likert {
+    list-style:none;
+    width:100%;
+    margin:0;
+    padding:0 0 35px;
+    display:block;
+    border-bottom:2px solid #efefef;
+}
+form .seven-pt-Likert:last-of-type {border-bottom:0;}
+form .seven-pt-Likert:before {
+    content: '';
+    position:relative;
+    top:11px;
+    left:6.5%;
+    display:block;
+    background-color:#efefef;
+    height:4px;
+    width:80%;
+}
+form .seven-pt-Likert li {
+    display:inline-block;
+    width:13%;
+    text-align:center;
+    vertical-align: top;
+}
+
+form .seven-pt-Likert li input[type=radio] {
+    display:block;
+    position:relative;
+    top:0;
+    left:50%;
+    margin-left:-6px;
+}
+
+form .seven-pt-Likert li label {
+    width:100%;
+    font-style: normal;
+    font-size: small;
+}
+
+/* likert buttons */
+
 form .buttons {
     margin:30px 0;
     padding:0 4.25%;
-    text-align:right
+    text-align:center;
 }
 form .buttons button {
     padding: 5px 10px;
     background-color: #67ab49;
     border: 0;
     border-radius: 3px;
+    text-align:center;
+}
+
+.btn.btn-primary {
+    display: block;
+    margin: auto;
 }
 
 

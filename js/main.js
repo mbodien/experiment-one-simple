@@ -1,19 +1,19 @@
+$(document).ready(function() {
+    $("body").fadeIn(500);
+});
+
 $(".page").hide();
 $("#page3").show();
+
 var currentPage = 3;
 
 /* hidden elements */
 
 $(".errorMessage").hide();
-
 $(".facebookSharePicture").hide();
 
 
-// $(document).ready(function () {
-//
-// });
-
-
+var data = []; // all data will be stored here
 
 function nextPage() {
     var pageHide = "#page" + currentPage;
@@ -21,6 +21,29 @@ function nextPage() {
     var pageShow = "#page" + currentPage;
     $(pageHide).hide();
     $(pageShow).show();
+}
+
+/* Demo data */
+
+function demoDataSave() {
+    var age = $("input[name=age]:checked").val();
+    var gender = $("input[name=gender]:checked").val();
+    var facebookUsage = $("input[name=facebookAccount]:checked").val();
+    data.push(age, gender, state, facebookUsage);
+}
+
+function politicalDataSave() {
+    var partyID = $("input[name=partyID]:checked").val();
+    var ideology = $("input[name=ideology]:checked").val();
+    var ideologyImportance = $("input[name=partyImportance]:checked").val();
+    if (!$("input[name=partyID]:checked").val() || !$("input[name=ideology]:checked").val() || !$("input[name=partyImportance]:checked").val()) {
+        $("#politicalDataError").show();
+    } else {
+        data.push(partyID, ideology,ideologyImportance);
+        decideConditions();
+        setExperimentDirections();
+        nextPage();
+    }
 }
 
 
@@ -149,6 +172,7 @@ function setExperimentDirections() {
     }
 }
 
+/* meme display logic */
 
 var memeID = 0; // which meme is being viewed?
 var trialID = 0; // trial 1 or trial 2?
@@ -215,6 +239,7 @@ function nextTrial() {
     if (trialID === 1) {
         nextPage();
     } else {
+        setFacebookTargetMemes(); // sets the target meme for the Facebook questions
         nextPage();
         nextPage();
     }
@@ -243,8 +268,6 @@ function checkWhichTrial() {
         setMemeContent_Combo();
         }
 }
-
-var data = [];
 
 
 function saveMemeData() {
@@ -275,13 +298,46 @@ function checkLikertError() {   // make sure selection made, otherwise throw err
     }
 }
 
+/* set facebook Like page with memes */
+function setFacebookTargetMemes() {
+        $("#memeCopyFB-3").text(targetMemeCopyAndSource);
+        $("#memePictureFB-3").attr("src",targetMemeImageSource);
+}
+
+var facebookEvalPage = 0;
+
+function facebookEvaluation() {
+    if (facebookEvalPage < 1) { // if completed "like" question
+        saveFacebookLikeData();
+        facebookEvalPage ++;
+        $("input[name=likertMemeFB]").prop("checked",false); // reset likert question
+        $("#facebookDirections").text("Which of the memes that you have seen would you be most likely to 'like' on Facebook?\nSelect only 1.");
+        $("#facebookEvalPicture-0").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
+        $("#facebookEvalPicture-1").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
+        $("#facebookEvalPicture-2").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
+        $("#facebookEvalPicture-3").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
+    } else {  // if completed "share" question
+        saveFacebookShareData();
+        nextPage();
+    }
+}
+
+function saveFacebookLikeData() {
+    memeLike = $("input[name=likertMemeFB]:checked").val();
+    data.push("facebook Like : " + memeLike);
+}
+
+function saveFacebookShareData() {
+    memeShare = $("input[name=likertMemeFB]:checked").val();
+    data.push("facebook Share : " + memeShare);
+}
+
 
 
 var select = "";
 for (i=18;i<=100;i++) {
     select += "<option val=" + i + ">" + i + "</option>";
 }
-
 $("#18_100").html(select);
 
 
