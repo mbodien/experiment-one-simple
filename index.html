@@ -30,12 +30,16 @@
                     By partaking in this study, you will help scientists understand more about what makes memes effective, and, you will earn $.05 in appreciation for taking part.<br><br>
                     By continuing, you agree to the conditions below.
                 </p>
-                <button class="btn btn-primary" onclick="nextPage()">Begin</button>
+                <button class="btn btn-primary" onclick="nextPage(); expStartDataSave()">Begin</button>
                 <div id="studyConditions">
                     <p> I have read the above information about this experiment.<br><br>
+                        I have had the opportunity to ask questions via email and discuss the study.<br><br>
+                        I have received satisfactory answers to all my questions or have been advised of an individual to contact for answers to pertinent questions about the research.<br><br>
                         I understood that my data will be held anonymously and my responses cannot be traced back to me individually.<br><br>
                         I consent to participate in this study.<br><br>
-                        I understand that I can withdraw at any time by closing my browser.
+                        I understand that I can withdraw at any time by closing my browser.<br><br>
+                        I consent to participant in this study.<br><br>
+                        I understand that I am free to withdraw from the study without penalty if I so wish, and I consent to the processing of my personal information for the purposes of this study only and that it will not be used for any other purpose. I understand that such information will be treated as strictly confidential and handled in accordance with the provisions of the Data Protection Act 1998.
                     </p>
                 </div>
             </div>
@@ -66,18 +70,21 @@
                         <label><input type="radio" name="facebookUsage" value="more than once a day">More than once a day</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="At least a few times a week">At least a few times a week</label>
+                        <label><input type="radio" name="facebookUsage" value="at least a few times a week">At least a few times a week</label>
                     </div>
                     <div class="radio">
                         <label><input type="radio" name="facebookUsage" value="At least a few times a month">At least a few times a month</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="Less than a few times a month">Less than a few times a month</label>
+                        <label><input type="radio" name="facebookUsage" value="less than a few times a month">Less than a few times a month</label>
                     </div>
                     <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="Don't have Facebook">I don't have a Facebook account</label>
+                        <label><input type="radio" name="facebookUsage" value="don't have Facebook">I don't have a Facebook account</label>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="nextPage(); demoDataSave();" value="Next page">Next page</button>
+                    <div class="errorMessage" id="demosDataError">
+                        Please answer all questions before continuing.
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="demoDataSave();" value="Next page">Next page</button>
                 </form>
             </div>
         </div>
@@ -111,58 +118,83 @@
                     <label class="statement">How would you describe your political ideology?</label>
                     <ul class="seven-pt-Likert" id="ideologyLikert">
                         <li>
-                            <label><input type="radio" name="ideology" value="Very liberal">
+                            <label><input type="radio" name="ideology" value="very liberal">
                             Very liberal</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Mostly liberal">
+                            <label><input type="radio" name="ideology" value="mostly liberal">
                             Mostly liberal</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Somewhat liberal">
+                            <label><input type="radio" name="ideology" value="somewhat liberal">
                             Somewhat liberal</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Neither liberal or conservative">
+                            <label><input type="radio" name="ideology" value="neither liberal or conservative">
                             Neither liberal or conservative</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Somewhat conservative">
+                            <label><input type="radio" name="ideology" value="somewhat conservative">
                             Somewhat conservative</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Mostly conservative<">
+                            <label><input type="radio" name="ideology" value="mostly conservative<">
                             Mostly conservative</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="ideology" value="Very conservative">
+                            <label><input type="radio" name="ideology" value="very conservative">
                             Very conservative</label>
+                        </li>
+                    </ul>
+
+                    <label class="statement">When it comes to social issues, are you more of a progressive or more of a traditionalist?<br><br><span style="font-style:italic; font-weight:normal">In general, a progressive tends to favor legalized abortion, alternative lifestyles, and questioning the establishment.<br>  In general, a traditionalist tends to favor rights for the unborn, conventional marriage, and upholding existing institutions.</span></label>
+                    <ul class="likert">
+                        <li>
+                            <label><input type="radio" name="socialValues" value="progressive">
+                                I am a progressive</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="more progressive">
+                                I am more of a progressive</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="middle">
+                                I am in the middle</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="more traditionalist">
+                                I am more of a traditionalist</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="traditionalist">
+                                I am a traditionalist</label>
                         </li>
                     </ul>
 
                     <label class="statement">How important would you say your political identity is to who you are?</label>
                     <ul class="likert">
                         <li>
-                            <label><input type="radio" name="partyImportance" value="Not important">
+                            <label><input type="radio" name="partyImportance" value="not important">
                                 Not important</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="partyImportance" value="Slightly important">
+                            <label><input type="radio" name="partyImportance" value="slightly important">
                                 Slightly important</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="partyImportance" value="Moderately important">
+                            <label><input type="radio" name="partyImportance" value="moderately important">
                                 Moderately important</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="partyImportance" value="Important">
+                            <label><input type="radio" name="partyImportance" value="important">
                                 Important</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="partyImportance" value="Very important">
+                            <label><input type="radio" name="partyImportance" value="very important">
                                 Very important</label>
                         </li>
                     </ul>
+
                     <div class="errorMessage" id="politicalDataError">
                         Please answer all questions before continuing.
                     </div>
@@ -179,7 +211,7 @@
                 <p id="trial1Directions" class="directions">
                     You will now be presented with 4 memes, one at a time. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you.
                 </p>
-                <input type="button" class="btn btn-primary" onclick="nextPage(); beginExperiment();" value="Next page">
+                <input type="button" class="btn btn-primary" onclick="nextPage(); beginExperiment(); trial1StartTime()" value="Next page">
             </div>
         </div>
 
@@ -206,23 +238,23 @@
                     <label class="statement" id="memeStatement">How much do you resonate with this meme?</label>
                     <ul class="likert">
                         <li>
-                            <label> <input type="radio" name="likertMeme" value="Not at all">
+                            <label> <input type="radio" name="likertMeme" value="not at all">
                             Not at all</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="likertMeme" value="Slightly">
+                            <label><input type="radio" name="likertMeme" value="slightly">
                             Slightly</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="likertMeme" value="Moderately">
+                            <label><input type="radio" name="likertMeme" value="moderately">
                             Moderately</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="likertMeme" value="Very">
+                            <label><input type="radio" name="likertMeme" value="very">
                             Very</label>
                         </li>
                         <li>
-                            <label><input type="radio" name="likertMeme" value="Extremely">
+                            <label><input type="radio" name="likertMeme" value="extremely">
                             Extremely</label>
                         </li>
                     </ul>
@@ -246,7 +278,7 @@
                 <p id="Trial2Directions">
                     You will now be presented with the entire memes, including the message and the image. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you?
                 </p>
-                <input type="button" class="btn btn-primary" onclick="beginTrial2()" value="Next page">
+                <input type="button" class="btn btn-primary" onclick="beginTrial2(); trial2StartTime();" value="Next page">
             </div>
         </div>
 
