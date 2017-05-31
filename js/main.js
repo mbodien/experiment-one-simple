@@ -356,23 +356,12 @@ function setFacebookTargetMemes() {
         $("#memePictureFB-3").attr("src",targetMemeImageSource);
 }
 
-var facebookEvalPage = 0;
 
 function facebookEvaluation() {
-    if (facebookEvalPage < 1) { // if completed "like" question
-        saveFacebookLikeData();
-        facebookEvalPage ++;
-        $("input[name=likertMemeFB]").prop("checked",false); // reset likert question
-        $("#facebookDirections").text("Which of the memes that you have seen would you be most likely to 'share' on Facebook?\nSelect only 1.");
-        $("#facebookEvalPicture-0").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
-        $("#facebookEvalPicture-1").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
-        $("#facebookEvalPicture-2").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
-        $("#facebookEvalPicture-3").attr("src","http://audioenhancement.com/wp-content/uploads/2014/05/Share-on-Facebook-LG.png");
-    } else {  // if completed "share" question
-        saveFacebookShareData();
-        nextPage();
-        writeData();
-    }
+    saveFacebookLikeData();
+    nextPage();
+    writeData();
+
 }
 
 
@@ -396,8 +385,8 @@ var targetMemeCopyLibrary = {
     selfRelianceCondition: {
         "BO": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength comes from learning how to solve one’s own problems.",
         "HC": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength comes from learning how to solve one’s own problems.",
-        "SP": "Let people take care of themselves. We can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud.",
-        "DT": "Let people take care of themselves. We can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud."
+        "SP": "Let people take care of themselves. You can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud.",
+        "DT": "Let people take care of themselves. You can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud."
     },
     toleranceCondition: {
         "BO": "I’ve always been someone who gets along with others. By listening, by embracing others’ unique point of view, you give yourself the chance to connect with those you’d never otherwise associate.",
