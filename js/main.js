@@ -13,8 +13,6 @@ $(".errorMessage").hide();
 $(".facebookSharePicture").hide();
 
 
-
-
 function nextPage() {
     var pageHide = "#page" + currentPage; // #page2
     currentPage ++;
@@ -23,13 +21,42 @@ function nextPage() {
     $(pageShow).show();
 }
 
+function lastPage() {
+    var pageHide = "#page" + currentPage; // #page2
+    currentPage --;
+    var pageShow = "#page" + currentPage; // #page1
+    $(pageHide).hide();
+    $(pageShow).show();
+}
+
+/* Consent page */
+
+function checkConsent() {
+    var consent1 = $("input[name=consent1]:checked").val();
+    var consent2 = $("input[name=consent2]:checked").val();
+    var consent3 = $("input[name=consent3]:checked").val();
+    var consent4 = $("input[name=consent4]:checked").val();
+    var consent5 = $("input[name=consent5]:checked").val();
+    var consent6 = $("input[name=consent6]:checked").val();
+    var consentTotal = parseInt(consent1) + parseInt(consent2) + parseInt(consent3) + parseInt(consent4) + parseInt(consent5) + parseInt(consent6);
+    console.log(consentTotal);
+    if (consentTotal === 6) {
+        expStartDataSave();
+        decideConditions();  // setting experiment conditions here
+        setExperimentDirections();
+        nextPage()
+    } else {
+        $("#consentErrorMessage").show();
+    }
+}
+
+
 /* Data saving */
 
 var data = []; // all data will be stored here
 
-var d = new Date();
-
 function expStartDataSave() {
+    var d = new Date();
     var expStartTime = d.getTime();
     var startTime = "experimentStart: " +expStartTime;
     data.push(startTime);
@@ -63,19 +90,19 @@ function politicalDataSave() {
         var ideologyImportance = $("input[name=partyImportance]:checked").val();
         var ideologyImportanceSave = "importance: " + ideologyImportance;
         data.push(partyIDsave, ideologySave, socialValuesSave, ideologyImportanceSave);
-        decideConditions();
-        setExperimentDirections();
         nextPage();
     }
 }
 
 function trial1StartTime() {
+    var d = new Date();
     var startTime = d.getTime();
     var startTimeSave = "trial1 start: " + startTime;
     data.push(startTimeSave);
 }
 
 function trial2StartTime() {
+    var d = new Date();
     var startTime = d.getTime();
     var startTimeSave = "trial2 start: " + startTime;
     data.push(startTimeSave);
@@ -85,6 +112,7 @@ function saveMemeData() {
     var memeNumber = "memeID:" + memeID;
     var memeScore = $("input[name=likertMeme]:checked").val();
     var likertData = "trialID_" + trialID + "_" + memeNumber + ": " + memeScore;
+    var d = new Date();
     var buttonClickedTime = d.getTime();
     var RTData = "trialID_" + trialID + "_" + memeNumber + ": " + buttonClickedTime;
     data.push(likertData, RTData);
@@ -92,14 +120,40 @@ function saveMemeData() {
     console.log(likertData);
 }
 
-function saveFacebookLikeData() {
+function saveFacebookData() {
     memeLike = $("input[name=likertMemeFB]:checked").val();
-    data.push("facebookLike: " + memeLike);
+    if (memeLike === undefined) {
+        $("#facebookError").show();
+    } else {
+        data.push("facebookLike: " + memeLike);
+        nextPage();
+    }
 }
 
-function saveFacebookShareData() {
-    memeShare = $("input[name=likertMemeFB]:checked").val();
-    data.push("facebookShare: " + memeShare);
+function saveDiscomfort() {
+    var discomfort = $("input[name=discomfort]:checked").val();
+    if (discomfort === undefined) {
+        $("#discomfortError").show();
+    } else {
+        discomfortSave = "discomfort: " + discomfort;
+        data.push(discomfortSave);
+        nextPage();
+    }
+}
+
+function MTurkID() {
+    var workerID = $("#MTurkID").val();
+    if (workerID.length < 3) {
+        $("#workerIDError").show()
+    } else {
+        var MTurkIDSave = "MTurk ID: " + workerID;
+        var d = new Date();
+        var endTime = d.getTime();
+        var endTimeSave = "exp end: " + endTime;
+        data.push(MTurkIDSave, endTimeSave);
+        writeData(); // sends data to Firebase
+        nextPage();
+    }
 }
 
 
@@ -230,9 +284,9 @@ function determineFillerMemeProps(memeID) {
 
 function setExperimentDirections() {
     if (revealOrderCondition === "messageFirstCondition") {
-        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate.\n\nBut, before we show you the whole memes, we want to know how you feel about just the message of each meme.\n\nPlease record how much you resonate with the message.\n\nBy resonate we mean how much does the message speak to you in a positive, inspiring, and meaningful way.");
+        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes that will be showing you include a message and an image of the person who said the message. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just the message of each meme.\n\nPlease record how much you resonate with the message.\n\nBy resonate we mean how much does the message speak to you in a positive, inspiring, and meaningful way.");
     } else if (revealOrderCondition === "sourceFirstCondition") {
-        $("#trial1Directions").text("There are 4 different memes that you will see.\n\nBut, before we show you the whole memes, we want to know how you feel about just person who authored each message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
+        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes that will be showing you include a message and an image of the person who said the message. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just person who authored each message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
     }
 }
 
@@ -310,9 +364,7 @@ function nextTrial() {
 }
 
 function beginTrial2() {
-    $("#page6").hide();
-    $("#page5").show();
-    currentPage = 5;
+    lastPage();
     setMemeContent_Combo();
 }
 
@@ -341,8 +393,7 @@ function checkLikertError() {   // make sure selection made, otherwise throw err
     likertValue = $("input[name=likertMeme]:checked").val();
     if (likertValue === undefined) {
         $("#memeLikertError").show();
-    }
-    else {
+    } else {
         $("#memeLikertError").hide();
         saveMemeData();  // creates variable to save data
         clearMemeLikert(); // unchecks the likert radio buttons
@@ -356,13 +407,6 @@ function setFacebookTargetMemes() {
         $("#memePictureFB-3").attr("src",targetMemeImageSource);
 }
 
-
-function facebookEvaluation() {
-    saveFacebookLikeData();
-    nextPage();
-    writeData();
-
-}
 
 
 var select = "";
@@ -379,8 +423,8 @@ var targetMemeCopyLibrary = {
     equalityCondition: {
         "BO": "Everyone is born with equal capacity for achieving success. Citizens in this country deserve an equal opportunity to reach that potential.",
         "HC": "Everyone is born with equal capacity for achieving success. Citizens in this country deserve an equal opportunity to reach that potential.",
-        "SP": "Everyone is born the same. Everyone could be great. But, there isn’t an equal opportunity in this country to make it happen. There should be.",
-        "DT": "Everyone is born the same. Everyone could be great. But, there isn’t an equal opportunity in this country to make it happen. There should be."
+        "SP": "Everyone could be great and achieve success. But, there isn’t an equal opportunity in this country to make it happen. There should be.",
+        "DT": "Everyone could be great and achieve success. But, there isn’t an equal opportunity in this country to make it happen. There should be."
     },
     selfRelianceCondition: {
         "BO": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength comes from learning how to solve one’s own problems.",
@@ -423,8 +467,8 @@ var fillerMemeCopyLibrary = {
 };
 
 var fillerMemeSourcesLibrary = {
-    "0": "-Michael Jordan\nTo a Sports Illustrated reporter, July 8th, 1996",
-    "1": "-Bill Gates, 1996\nTo Forbes, January 22nd 1996",
+    "0": "-Michael Jordan\nTo a Sports Illustrated reporter on July 8th, 1996",
+    "1": "-Bill Gates, 1996\nTo Forbes, published January 1996",
     "2": "-Albert Einstein\nWritten in an essay, published 1936"
 };
 

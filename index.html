@@ -21,202 +21,119 @@
 
         <!-- Add your site or application content here -->
 
+        <!--  page 1: welcome -->
 
         <div class="page" id="page1">
             <div class="container generalDirections">
                 <h1>Welcome</h1>
                 <p>
-                    For this HIT you will be taking part in an important research study about what makes memes effective.<br><br>You will be asked to evaluate four different memes. The study will take about 4 minutes to complete. <br><br>
-                    By partaking in this study, you will help scientists understand more about what makes memes effective, and, you will earn $.15 in appreciation for taking part.<br><br>
-                    By continuing, you agree to the conditions below.
+                    For this HIT you will be taking part in an important research study about what makes memes resonate with people.
+                    <br><br>You will be asked to evaluate four different memes. The HIT will take about 4 minutes to complete.
+                    <br><br>Upon completion of the HIT, you will be given a reference code to put into MTurk. You will earn $.15 for completing the study<br><br>
+                    The following page asks for your consent to participate based on the information below. Click the button to continue.
                 </p>
-                <button class="btn btn-primary" onclick="nextPage(); expStartDataSave()">Begin</button>
+                <button class="btn btn-primary" onclick="nextPage();">Next</button>
                 <div id="studyConditions">
-                    <p> I have read the above information about this experiment.<br><br>
-                        I have had the opportunity to ask questions via email and discuss the study.<br><br>
-                        I have received satisfactory answers to all my questions or have been advised of an individual to contact for answers to pertinent questions about the research.<br><br>
-                        I understood that my data will be held anonymously and my responses cannot be traced back to me individually.<br><br>
-                        I understand that I can withdraw at any time by closing my browser.<br><br>
-                        I consent to participant in this study.<br><br>
-                        I understand that I am free to withdraw from the study without penalty if I so wish, and I consent to the processing of my personal information for the purposes of this study only and that it will not be used for any other purpose. I understand that such information will be treated as strictly confidential and handled in accordance with the provisions of the Data Protection Act 1998.
+                    <h4>Information Sheet</h4>
+                    <p><b>Title of project:</b> The role of causal explanations in judgments under radical uncertainty</p>
+                    <p>This study has been approved by the Experimental Psychology Department Ethics Chair: Dr Adam J. L. Harris<br>Project ID Number: EP/2017/006</p>
+                    <br>
+                    <p><b>Principal investigator:</b><br>Paula Parpart, Teaching Fellow<br>
+                        Room 204b,<br>
+                        UCL 26 Bedford Way,<br>
+                        London WC1H 0AP,<br>
+                        United Kingdom<br>
+                        parpart.testing@gmail.com
                     </p>
+                    <br>
+                    <p>We would like to invite you to participate in this research project run by Matthew Bodien (mbodien@gmail.com) under the supervision of Paula Parpart (paula.parpart@ucl.ac.uk).
+                        You should only participate if you want to; choosing not to take part will not disadvantage you in any way.
+                        Before you decide whether you want to take part, it is important for you to read the following information carefully and discuss it with others if you wish.
+                        If anything is not clear or you require more information, you can email the researcher above who is running the study.<br><br>
+                        We are interested in how different memes resonate with people. The memes being studied here include a message and an image of the person who said the message.
+                        The study will take no longer than <u>4 minutes</u>.<br><br>
+                        Your data will be kept anonymous without information that could personally identify you.
+                        The data will be kept in a secure database, to which only the UCL researchers working with Paula Parpart have access. All data will be collected and stored in accordance with the Data Protection Act 1998.<br><br>
+                        It is up to you to decide whether or not to take part. If you choose not to participate, you won't incur any penalties or lose any benefits to which you might have been entitled.
+                        However, if you do decide to take part, you will be asked to agree to a consent form by ticking a box. Even after agreeing to take part, you can still withdraw at any time and without giving a reason.
+                    </p>
+
                 </div>
             </div>
         </div>
 
-        <!--  page 2: demographics -->
-
-        <div class="page" id="page2">
-            <div class="container demos">
-                <h1>About you</h1>
-                <form class="form-group">
-                    <div class="form-group">
-                        <label for="18_100"> What is your age?</label>
-                        <select name="age" id='18_100' class="form-control"></select>
-                    </div>
-
-                    <p>What is your gender?</p>
-                    <div class="radio">
-                        <label><input type="radio" id='g1' name="gender" value="female">Female</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type='radio' id='g2' name="gender" value="male">Male</label>
-                    </div>
-
-
-                    <p>Which best describes how often you visit Facebook to post content or to read content posted by others?</p>
-                    <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="more than once a day">More than once a day</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="at least a few times a week">At least a few times a week</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="At least a few times a month">At least a few times a month</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="less than a few times a month">Less than a few times a month</label>
-                    </div>
-                    <div class="radio">
-                        <label><input type="radio" name="facebookUsage" value="don't have Facebook">I don't have a Facebook account</label>
-                    </div>
-                    <div class="errorMessage" id="demosDataError">
-                        Please answer all questions before continuing.
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="demoDataSave();" value="Next page">Next page</button>
-                </form>
+        <!--  page 2: consent -->
+        <div class="page consentPage" id="page2">
+            <div class="container consentDirections">
+                <h1>Consent Agreement</h1>
+                <p><b>Title of project:</b> The role of causal explanations in judgments under radical uncertainty</p>
+                <p>This study has been approved by the Experimental Psychology Department Ethics Chair: Dr Adam J. L. Harris<br>Project ID Number: EP/2017/006</p>
+            </div>
+            <div class="container">
+                <br><i>By clicking on the green button below, I agree that:</i><br><br>
+                <p>I have read the information on the previous page (Information Sheet).</p>
+                    <label class="btn btn-default"><input type="radio" name="consent1" value="1"> Yes</label>
+                    <label class="btn btn-default"><input type="radio" name="consent1"> No</label>
+                <br><br>
+                <p>I have had the opportunity to ask questions via email and discuss the study.</p>
+                <label class="btn btn-default"><input type="radio" name="consent2" value="1"> Yes</label>
+                <label class="btn btn-default"><input type="radio" name="consent2"> No</label>
+                <br><br>
+                <p>I have received satisfactory answers to all my questions or have been advised of an individual to contact for answers to pertinent questions about the research.</p>
+                <label class="btn btn-default"><input type="radio" name="consent3" value="1"> Yes</label>
+                <label class="btn btn-default"><input type="radio" name="consent3"> No</label>
+                <br><br>
+                <p>I understand that my data will be held anonymously and as such my responses cannot be traced back to me individually.</p>
+                <label class="btn btn-default"><input type="radio" name="consent4" value="1"> Yes</label>
+                <label class="btn btn-default"><input type="radio" name="consent4"> No</label>
+                <br><br>
+                <p>I understand that I am free to withdraw from the study without penalty if I so wish simply by closing my browser.</p>
+                <label class="btn btn-default"><input type="radio" name="consent5" value="1"> Yes</label>
+                <label class="btn btn-default"><input type="radio" name="consent5"> No</label>
+                <br><br>
+                <p>I consent to participant in this study.</p>
+                <label class="btn btn-default"><input type="radio" name="consent6" value="1"> Agree</label>
+                <label class="btn btn-default"><input type="radio" name="consent6"> Disagree</label>
+                <br><br>
+                <div class="errorMessage" id="consentErrorMessage">
+                    You must select Yes to all the above in order to continue
+                </div>
+                <button type="button" class="btn btn-success" onclick="checkConsent()">Begin</button>
             </div>
         </div>
 
-        <!--  page 3: political identity -->
+        <!-- page 3: meme directions -->
 
         <div class="page" id="page3">
-            <div class="container">
-                <h1>About you</h1>
-                <form class="form-group">
-                    <label class="statement">How would you describe your current political identification?</label>
-                    <ul class="four-pt-Likert">
-                        <li>
-                            <label><input type="radio" name="partyID" value="Democrat">
-                            Democrat</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyID" value="Republican">
-                            Republican</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyID" value="Neither">
-                            Neither Democrat or Republican</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyID" value="Undecided">
-                            Undecided</label>
-                        </li>
-                    </ul>
-
-                    <label class="statement">How would you describe your political ideology?</label>
-                    <ul class="seven-pt-Likert" id="ideologyLikert">
-                        <li>
-                            <label><input type="radio" name="ideology" value="very liberal">
-                            Very liberal</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="mostly liberal">
-                            Mostly liberal</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="somewhat liberal">
-                            Somewhat liberal</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="neither liberal or conservative">
-                            Neither liberal or conservative</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="somewhat conservative">
-                            Somewhat conservative</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="mostly conservative<">
-                            Mostly conservative</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="ideology" value="very conservative">
-                            Very conservative</label>
-                        </li>
-                    </ul>
-
-                    <label class="statement">When it comes to social issues, are you more of a progressive or more of a traditionalist?<br><br><span style="font-style:italic; font-weight:normal">In general, a progressive tends to favor legalized abortion, alternative lifestyles, and questioning the establishment.<br>  In general, a traditionalist tends to favor rights for the unborn, conventional marriage, and upholding existing institutions.</span></label>
-                    <ul class="likert">
-                        <li>
-                            <label><input type="radio" name="socialValues" value="progressive">
-                                I am a progressive</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="socialValues" value="more progressive">
-                                I am more of a progressive</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="socialValues" value="middle">
-                                I am in the middle</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="socialValues" value="more traditionalist">
-                                I am more of a traditionalist</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="socialValues" value="traditionalist">
-                                I am a traditionalist</label>
-                        </li>
-                    </ul>
-
-                    <label class="statement">How important would you say your political identity is to who you are?</label>
-                    <ul class="likert">
-                        <li>
-                            <label><input type="radio" name="partyImportance" value="not important">
-                                Not important</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyImportance" value="slightly important">
-                                Slightly important</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyImportance" value="moderately important">
-                                Moderately important</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyImportance" value="important">
-                                Important</label>
-                        </li>
-                        <li>
-                            <label><input type="radio" name="partyImportance" value="very important">
-                                Very important</label>
-                        </li>
-                    </ul>
-
-                    <div class="errorMessage" id="politicalDataError">
-                        Please answer all questions before continuing.
-                    </div>
-                    <input type="button" class="btn btn-primary" value="Next page" onclick="politicalDataSave();">
-                </form>
-            </div>
-        </div>
-
-        <!-- page 4: meme directions -->
-
-        <div class="page" id="page4">
             <div class="container generalDirections">
                 <h1>Directions</h1>
                 <p id="trial1Directions" class="directions">
-                    You will now be presented with 4 memes, one at a time. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you.
+                    You will now be presented with 4 memes, one at a time. The memes that will be showing you include a message and an image of the person who said the message. The meme below is an example of what you will see. Imagine you see each meme while surfing the web.<br><br><b>Please record how much you resonate with the meme.</b><br><br>By resonate we mean how much does the meme speak to you in a positive, inspiring, and meaningful way.
                 </p>
-                <input type="button" class="btn btn-primary" onclick="nextPage(); beginExperiment(); trial1StartTime()" value="Next page">
+                <input type="button" class="btn btn-primary" onclick="nextPage(); beginExperiment(); trial1StartTime()" value="Begin">
+            </div>
+
+            <div class="container">
+                <br><br>
+                <p style="text-align: center"><i>Example meme</i></p>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p class="memeCopyFB" id="exampleMeme">
+                            Rarely have I seen a situation where doing less than the other guy is a good strategy.<br><br>-Jimmy Spithill<br>To reporters, June 8th, 1999
+                        </p>
+                    </div>
+                    <div class="col-sm-4" >
+                        <div class="memeImageFB">
+                            <img id="exampleMemePic" src="http://i.imgur.com/dOmjvoD.png">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- page 5: trial 1 and 2 memes  -->
+        <!-- page 4: trial 1 and 2 memes  -->
 
-        <div class="page" id="page5">
+        <div class="page" id="page4">
             <div class="container meme">
                 <div class="row">
                     <div class="col-sm-8" >
@@ -269,21 +186,21 @@
             </div>
         </div>
 
-        <!-- page 6: directions for reveal conditions -->
+        <!-- page 5: directions for reveal conditions -->
 
-        <div class="page" id="page6">
+        <div class="page" id="page5">
             <div class="container generalDirections">
                 <h1>Directions</h1>
                 <p id="Trial2Directions">
-                    You will now be presented with the entire memes, including the message and the image. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you?
+                    You will now be presented with the entire memes, including the message and an image of the person who said the message. Imagine you see each meme while surfing the web.<br><br>Please record how much you resonate with the meme.<br><br>By resonate we mean how much does the meme speak to you in a positive, inspiring, and meaningful way.
                 </p>
                 <input type="button" class="btn btn-primary" onclick="beginTrial2(); trial2StartTime();" value="Next page">
             </div>
         </div>
 
-        <!-- page 7: facebook like questions -->
+        <!-- page 6: facebook like questions -->
 
-        <div class="page" id="page7">
+        <div class="page" id="page6">
             <div class="container">
                 <h4 id="facebookDirections">Which of the memes that you have seen would you be most likely to "like" on Facebook? Select only 1.</h4>
             </div>
@@ -294,7 +211,7 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <p class="memeCopyFB" id="memeCopyFB-0">
-                                If you accept the expectations of others, especially negative ones, then you never will change the outcome<br><br>-Michael Jordan<br>To a Sports Illustrated reporter, July 8th, 1996
+                                If you accept the expectations of others, especially negative ones, then you never will change the outcome<br><br>-Michael Jordan<br>To a Sports Illustrated reporter on July 8th, 1996
                             </p>
                         </div>
                         <div class="col-sm-4" >
@@ -318,7 +235,7 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <p class="memeCopyFB" id="memeCopyFB-1">
-                                As we look ahead into the next century, leaders will be those who empower others.<br><br>-Bill Gates, 1996<br>To Forbes, January 22nd 1996
+                                As we look ahead into the next century, leaders will be those who empower others.<br><br>-Bill Gates, 1996<br>To Forbes published January 1996
                             </p>
                         </div>
                         <div class="col-sm-4" >
@@ -382,21 +299,217 @@
                 </div>
             </div>
 
-                <input type="button" class="btn btn-primary" onclick="facebookEvaluation()" value="Next">
+                <div class="errorMessage" id="facebookError">
+                    Please make a selection
+                </div>
+                <input type="button" class="btn btn-primary" onclick="saveFacebookData()" value="Next">
             </form>
         </div>
 
-        <!-- page 8: thank and complete -->
+        <!-- page 7: psych discomfort -->
 
-        <div class="page" id="page8">
-            <div class="container">
-                <h1>Thank you for completing this experiment.</h1>
-                <p>Here is the reference code to use to submit your HIT on Amazon Mechanical Turk:</p>
-                <h2>REF CODE HERE</h2>
+        <div class="page" id="page7">
+            <div class="container generalDirections">
+                <div>
+                    <h4 id="dicomfortDirections">How did viewing the memes make you feel?</h4>
+                    <label class="btn btn-default"><input type="radio" name="discomfort" value="I felt fine"> I felt fine</label>
+                    <label class="btn btn-default"><input type="radio" name="discomfort" value ="A bit odd"> A bit odd</label>
+                </div>
+
+                <div class="errorMessage" id="discomfortError">
+                    Please make a selection
+                </div>
+                <div>
+                    <br><br>
+                    <input type="button" class="btn btn-primary" onclick="saveDiscomfort()" value="Next">
+                </div>
             </div>
         </div>
 
+        <!--  page 8: demographics -->
 
+        <div class="page" id="page8">
+            <div class="container demos">
+                <h1>About you</h1>
+                <form class="form-group">
+                    <div class="form-group">
+                        <label for="18_100"> What is your age?</label>
+                        <select name="age" id='18_100' class="form-control"></select>
+                    </div>
+
+                    <p>What is your gender?</p>
+                    <div class="radio">
+                        <label><input type="radio" id='g1' name="gender" value="female">Female</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type='radio' id='g2' name="gender" value="male">Male</label>
+                    </div>
+
+
+                    <p>Which best describes how often you visit Facebook to post content or to read content posted by others?</p>
+                    <div class="radio">
+                        <label><input type="radio" name="facebookUsage" value="Once or more a day">Once or more a day</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="facebookUsage" value="At least a few times a week">At least a few times a week</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="facebookUsage" value="At least a few times a month">At least a few times a month</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="facebookUsage" value="Less than a few times a month">Less than a few times a month</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="facebookUsage" value="Don't have Facebook">I don't have a Facebook account</label>
+                    </div>
+                    <div class="errorMessage" id="demosDataError">
+                        Please answer all questions before continuing.
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="demoDataSave();" value="Next page">Next page</button>
+                </form>
+            </div>
+        </div>
+
+        <!--  page 9: political identity -->
+
+        <div class="page" id="page9">
+            <div class="container">
+                <h1>About you</h1>
+                <form class="form-group">
+                    <label class="statement">How would you describe your current political identification?</label>
+                    <ul class="four-pt-Likert">
+                        <li>
+                            <label><input type="radio" name="partyID" value="Democrat">
+                                Democrat</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyID" value="Republican">
+                                Republican</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyID" value="Neither">
+                                Neither Democrat or Republican</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyID" value="Undecided">
+                                Undecided</label>
+                        </li>
+                    </ul>
+
+                    <label class="statement">How would you describe your political ideology?</label>
+                    <ul class="seven-pt-Likert" id="ideologyLikert">
+                        <li>
+                            <label><input type="radio" name="ideology" value="very liberal">
+                                Very liberal</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="mostly liberal">
+                                Mostly liberal</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="somewhat liberal">
+                                Somewhat liberal</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="neither liberal or conservative">
+                                Neither liberal or conservative</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="somewhat conservative">
+                                Somewhat conservative</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="mostly conservative<">
+                                Mostly conservative</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="ideology" value="very conservative">
+                                Very conservative</label>
+                        </li>
+                    </ul>
+
+                    <label class="statement">When it comes to social issues, are you more of a progressive or more of a traditionalist?<br><br><span style="font-style:italic; font-weight:normal">In general, a progressive tends to favor legalized abortion, alternative lifestyles, and questioning the establishment.<br>  In general, a traditionalist tends to favor rights for the unborn, conventional marriage, and upholding existing institutions.</span></label>
+                    <ul class="likert">
+                        <li>
+                            <label><input type="radio" name="socialValues" value="progressive">
+                                I am a progressive</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="more progressive">
+                                I am more of a progressive</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="middle">
+                                I am in the middle</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="more traditionalist">
+                                I am more of a traditionalist</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="socialValues" value="traditionalist">
+                                I am a traditionalist</label>
+                        </li>
+                    </ul>
+
+                    <label class="statement">How important would you say your political identity is to who you are?</label>
+                    <ul class="likert">
+                        <li>
+                            <label><input type="radio" name="partyImportance" value="not important">
+                                Not important</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyImportance" value="slightly important">
+                                Slightly important</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyImportance" value="moderately important">
+                                Moderately important</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyImportance" value="important">
+                                Important</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="partyImportance" value="very important">
+                                Very important</label>
+                        </li>
+                    </ul>
+
+                    <div class="errorMessage" id="politicalDataError">
+                        Please answer all questions before continuing.
+                    </div>
+                    <input type="button" class="btn btn-primary" value="Next page" onclick="politicalDataSave();">
+                </form>
+            </div>
+        </div>
+
+        <!-- page 10: MTurk ID -->
+
+        <div class="page" id="page10">
+            <div class="container">
+                <h1>Thank you for completing this experiment.</h1>
+                <p>Please type in, or copy and paste, your Amazon Mechanical Turk Worker ID.</p>
+                <input type="text" class="form-control" id="MTurkID"><br>
+                <p>The next page will tell you how to complete your HIT on MTurk.</p>
+            </div>
+            <div class="errorMessage" id="workerIDError">
+                Please enter your MTurk ID. If you do not know it, please type: "I do not know".
+            </div>
+            <input type="button" class="btn btn-primary" onclick="MTurkID()" id="workerIDtext" value="Next">
+
+        </div>
+
+
+        <!-- page 11: Ref code -->
+
+        <div class="page" id="page11">
+            <div class="container">
+                <h4>To complete your HIT on MTurk, please type in your Amazon Mechancial Turk worker ID as your reference code.</h4>
+
+                <p>Once your HIT is finished, you can close this window.</p>
+            </div>
+        </div>
 
         <!-- Firebase database connection code -->
         <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
