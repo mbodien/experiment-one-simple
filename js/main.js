@@ -66,7 +66,7 @@ function demoDataSave() {
     if (!$("input[name=gender]:checked").val() || !$("input[name=facebookUsage]:checked").val()) {
         $("#demosDataError").show();
     } else {
-        var age = $("input[name=age]:checked").val();
+        var age = $("#18_100").val();
         var ageSave = "age: " + age;
         var gender = $("input[name=gender]:checked").val();
         var genderSave = "gender: " + gender;
