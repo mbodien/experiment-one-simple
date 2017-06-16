@@ -423,10 +423,10 @@ var targetMemeCopyLibrary = {
         "DT": "The world should try to get along better with people of every type. Even those who look at the world differently. If we just accepted everyone for what they are we can change the world for the better."
     },
     traditionalismCondition: {
-        "BO": "Families play a foundational role in society. Families ensure that the next generation learns the American values that define who we are, and who we strive to be.",
-        "HC": "Families play a foundational role in society. Families ensure that the next generation learns the American values that define who we are, and who we strive to be.",
-        "SP": "Families are the bedrock of society. Families make sure that the next generation learns the American values that define who we are, and who we want to be.",
-        "DT": "Families are the bedrock of society. Families make sure that the next generation learns the American values that define who we are, and who we want to be."
+        "BO": "Families play a foundational role in society. Families ensure that the next generation learns the essential American values that define who we are, and who we strive to be.",
+        "HC": "Families play a foundational role in society. Families ensure that the next generation learns the essential American values that define who we are, and who we strive to be.",
+        "SP": "Families are the bedrock of society. Families make sure that the next generation learns the key American values that define who we are, and who we want to be.",
+        "DT": "Families are the bedrock of society. Families make sure that the next generation learns the key American values that define who we are, and who we want to be."
     }
 };
 
