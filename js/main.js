@@ -268,9 +268,9 @@ function determineFillerMemeProps(memeID) {
 
 function setExperimentDirections() {
     if (revealOrderCondition === "messageFirstCondition") {
-        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes that will be showing you include a message and an image of the person who said the message. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just the message of each meme.\n\nPlease record how much you resonate with the message.\n\nBy resonate we mean how much does the message speak to you in a positive, inspiring, and meaningful way.");
+        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes include a message and an image. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just the message of each meme.\n\nPlease record how much you resonate with the message.\n\nBy resonate we mean how much does the message speak to you in a positive, inspiring, and meaningful way.");
     } else if (revealOrderCondition === "sourceFirstCondition") {
-        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes that will be showing you include a message and an image of the person who said the message. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just person who authored each message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
+        $("#trial1Directions").text("In a moment, we will show you 4 different memes that we will ask you to evaluate. The memes include a message and an image. The meme below is an example.\n\nBut, before we show you the whole memes, we want to know how you feel about just the person who authored the message.\n\nPlease record how much you resonate with the person that you see.\n\nBy resonate we mean how much do you find the person positive, inspiring, and meaningful.");
     }
 }
 
