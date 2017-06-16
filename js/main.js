@@ -411,10 +411,10 @@ var targetMemeCopyLibrary = {
         "DT": "Everyone is born with the same capacity for being successful. But, there isn’t an equal opportunity in this country to make it happen. There should be."
     },
     selfRelianceCondition: {
-        "BO": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength and pride comes from learning how to solve one’s own problems.",
-        "HC": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength and pride comes from learning how to solve one’s own problems.",
-        "SP": "We must let people take care of themselves. You can’t get too involved in people's lives. Strength and pride comes from learning how to solve your own problems.",
-        "DT": "We must let people take care of themselves. You can’t get too involved in people's lives. Strength and pride comes from learning how to solve your own problems."
+        "BO": "It's important to let individuals take care of themselves, and to be cautious of getting over-involving in others' lives. Strength and pride comes from learning how to solve one’s own problems.",
+        "HC": "It's important to let individuals take care of themselves, and to be cautious of getting over-involving in others' lives. Strength and pride comes from learning how to solve one’s own problems",
+        "SP": "It's important to let people take care of themselves. We can’t get too involved in people's lives or do too much for them. Strength and pride comes from learning how to solve your own problems.",
+        "DT": "It's important to let people take care of themselves. We can’t get too involved in people's lives or do too much for them. Strength and pride comes from learning how to solve your own problems."
     },
     toleranceCondition: {
         "BO": "The world should be more accepting of people with different world views and moral standards. By embracing acceptance, we can change the world for the better.",
