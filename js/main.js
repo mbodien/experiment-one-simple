@@ -407,26 +407,26 @@ var targetMemeCopyLibrary = {
     equalityCondition: {
         "BO": "Everyone is born with equal capacity for achieving success. Citizens in this country deserve an equal opportunity to reach that potential.",
         "HC": "Everyone is born with equal capacity for achieving success. Citizens in this country deserve an equal opportunity to reach that potential.",
-        "SP": "Everyone could be great and achieve success. But, there isn’t an equal opportunity in this country to make it happen. There should be.",
-        "DT": "Everyone could be great and achieve success. But, there isn’t an equal opportunity in this country to make it happen. There should be."
+        "SP": "Everyone is born with the same capacity for being successful. But, there isn’t an equal opportunity in this country to make it happen. There should be.",
+        "DT": "Everyone is born with the same capacity for being successful. But, there isn’t an equal opportunity in this country to make it happen. There should be."
     },
     selfRelianceCondition: {
-        "BO": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength comes from learning how to solve one’s own problems.",
-        "HC": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength comes from learning how to solve one’s own problems.",
-        "SP": "Let people take care of themselves. You can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud.",
-        "DT": "Let people take care of themselves. You can’t do everything for them. If we let people figure things out on their own, it will make them strong. And make them proud."
+        "BO": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength and pride comes from learning how to solve one’s own problems.",
+        "HC": "We must let individuals take care of themselves, and be cautious of over-involving ourselves in people’s lives. Strength and pride comes from learning how to solve one’s own problems.",
+        "SP": "We must let people take care of themselves. You can’t get too involved in people's lives. Strength and pride comes from learning how to solve your own problems.",
+        "DT": "We must let people take care of themselves. You can’t get too involved in people's lives. Strength and pride comes from learning how to solve your own problems."
     },
     toleranceCondition: {
-        "BO": "I’ve always been someone who gets along with others. By listening, by embracing others’ unique point of view, you give yourself the chance to connect with those you’d never otherwise associate.",
-        "HC": "I’ve always been someone who gets along with others. By listening, by embracing others’ unique point of view, you give yourself the chance to connect with those you’d never otherwise associate.",
-        "SP": "I get along with people of every type. Not just because good people are everywhere but because I’ve learned that there’s more to be gained by accepting and listening than by shutting them out.",
-        "DT": "I get along with people of every type. Not just because good people are everywhere but because I’ve learned that there’s more to be gained by accepting and listening than by shutting them out."
+        "BO": "The world should be more accepting of people with different world views and moral standards. By embracing acceptance, we can change the world for the better.",
+        "HC": "The world should be more accepting of people with different world views and moral standards. By embracing acceptance, we can change the world for the better.",
+        "SP": "The world should try to get along better with people of every type. Even those who look at the world differently. If we just accepted everyone for what they are we can change the world for the better.",
+        "DT": "The world should try to get along better with people of every type. Even those who look at the world differently. If we just accepted everyone for what they are we can change the world for the better."
     },
     traditionalismCondition: {
-        "BO": "Families play a foundational role in society. It’s the responsibility of every parent to ensure that the next generation learns the long-standing values that define who we are, and who we strive to be.",
-        "HC": "Families play a foundational role in society. It’s the responsibility of every parent to ensure that the next generation learns the long-standing values that define who we are, and who we strive to be.",
-        "SP": "Families are the bedrock of society. Healthy families make sure that those long-established values that make us who we are make it to the next generation, and every generation after.",
-        "DT": "Families are the bedrock of society. Healthy families make sure that those long-established values that make us who we are make it to the next generation, and every generation after."
+        "BO": "Families play a foundational role in society. Families ensure that the next generation learns the American values that define who we are, and who we strive to be.",
+        "HC": "Families play a foundational role in society. Families ensure that the next generation learns the American values that define who we are, and who we strive to be.",
+        "SP": "Families are the bedrock of society. Families make sure that the next generation learns the American values that define who we are, and who we want to be.",
+        "DT": "Families are the bedrock of society. Families make sure that the next generation learns the American values that define who we are, and who we want to be."
     }
 };
 
@@ -447,7 +447,7 @@ var targetMemeImageSourceLibrary = {
 var fillerMemeCopyLibrary = {
     "0": "If you accept the expectations of others, especially negative ones, then you never will change the outcome.",
     "1": "As we look ahead into the next century, leaders will be those who empower others.",
-    "2": "The only thing that interferes with my learning is my education."
+    "2": "Reading, after a certain age, diverts the mind too much from its creative pursuits. Any man who reads too much and uses his own brain too little falls into lazy habits of thinking."
 };
 
 var fillerMemeSourcesLibrary = {
