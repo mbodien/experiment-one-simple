@@ -41,9 +41,9 @@ function checkConsent() {
     var consentTotal = parseInt(consent1) + parseInt(consent2) + parseInt(consent3) + parseInt(consent4) + parseInt(consent5) + parseInt(consent6);
     console.log(consentTotal);
     if (consentTotal === 6) {
-        expStartDataSave();
         decideConditions();  // setting experiment conditions here
         setExperimentDirections();
+        expStartDataSave();
         nextPage()
     } else {
         $("#consentErrorMessage").show();
@@ -57,9 +57,8 @@ var data = []; // all data will be stored here
 
 function expStartDataSave() {
     var d = new Date();
-    var expStartTime = d.getTime();
-    var startTime = "experimentStart: " +expStartTime;
-    data.push(startTime);
+    var startTime = d.getTime();
+    data.push(revealOrderCondition, dissonanceCondition, valueCondition, targetSource, startTime);
 }
 
 function demoDataSave() {
@@ -67,12 +66,9 @@ function demoDataSave() {
         $("#demosDataError").show();
     } else {
         var age = $("select[name=age]").val();
-        var ageSave = "age: " + age;
         var gender = $("input[name=gender]:checked").val();
-        var genderSave = "gender: " + gender;
         var facebookUsage = $("input[name=facebookUsage]:checked").val();
-        var facebookUsageSave = "facebookUsage: " + facebookUsage;
-        data.push(ageSave, genderSave, facebookUsageSave);
+        data.push(age, gender, facebookUsage);
         nextPage();
     }
 }
@@ -82,14 +78,10 @@ function politicalDataSave() {
         $("#politicalDataError").show();
     } else {
         var partyID = $("input[name=partyID]:checked").val();
-        var partyIDsave = "party: " + partyID;
         var ideology = $("input[name=ideology]:checked").val();
-        var ideologySave = "ideology: " + ideology;
         var socialValues = $("input[name=socialValues]:checked").val();
-        var socialValuesSave = "socialValues: " + socialValues;
         var ideologyImportance = $("input[name=partyImportance]:checked").val();
-        var ideologyImportanceSave = "importance: " + ideologyImportance;
-        data.push(partyIDsave, ideologySave, socialValuesSave, ideologyImportanceSave);
+        data.push(partyID, ideology, socialValues, ideologyImportance);
         nextPage();
     }
 }
@@ -97,27 +89,22 @@ function politicalDataSave() {
 function trial1StartTime() {
     var d = new Date();
     var startTime = d.getTime();
-    var startTimeSave = "trial1 start: " + startTime;
-    data.push(startTimeSave);
+    data.push(startTime);
 }
 
 function trial2StartTime() {
     var d = new Date();
     var startTime = d.getTime();
-    var startTimeSave = "trial2 start: " + startTime;
-    data.push(startTimeSave);
+    data.push(startTime);
 }
 
 function saveMemeData() {
-    var memeNumber = "memeID:" + memeID;
     var memeScore = $("input[name=likertMeme]:checked").val();
-    var likertData = "trialID_" + trialID + "_" + memeNumber + ": " + memeScore;
     var d = new Date();
     var buttonClickedTime = d.getTime();
-    var RTData = "trialID_" + trialID + "_" + memeNumber + ": " + buttonClickedTime;
-    data.push(likertData, RTData);
-    console.log(RTData);
-    console.log(likertData);
+    data.push(memeScore, buttonClickedTime);
+    console.log(memeScore);
+    console.log(buttonClickedTime);
 }
 
 function saveFacebookData() {
@@ -125,7 +112,7 @@ function saveFacebookData() {
     if (memeLike === undefined) {
         $("#facebookError").show();
     } else {
-        data.push("facebookLike: " + memeLike);
+        data.push(memeLike);
         nextPage();
     }
 }
@@ -135,8 +122,7 @@ function saveDiscomfort() {
     if (discomfort === undefined) {
         $("#discomfortError").show();
     } else {
-        discomfortSave = "discomfort: " + discomfort;
-        data.push(discomfortSave);
+        data.push(discomfort);
         nextPage();
     }
 }
@@ -146,11 +132,9 @@ function MTurkID() {
     if (workerID.length < 3) {
         $("#workerIDError").show()
     } else {
-        var MTurkIDSave = "MTurk ID: " + workerID;
         var d = new Date();
         var endTime = d.getTime();
-        var endTimeSave = "exp end: " + endTime;
-        data.push(MTurkIDSave, endTimeSave);
+        data.push(workerID, endTime);
         writeData(); // sends data to Firebase
         nextPage();
     }
